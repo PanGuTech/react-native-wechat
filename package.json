@@ -1,0 +1,31 @@
+{
+  "name": "@pangu/react-native-wechat",
+  "version": "0.0.1",
+  "description": "wechat support in React Native.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/PanGuTech/react-native-wechat.git"
+
+  },
+  "keywords": [
+    "wechat",
+    "react-native",
+    "ios",
+    "android"
+  ],
+  "dependencies": {
+    "events": "1.0.2"
+  },
+  "peerDependencies": {
+    "react-native": ">=0.40"
+  },
+  "author": "离落的风",
+  "bugs": {
+    "url": "https://github.com/PanGuTech/react-native-wechat/issues"
+  },
+  "homepage": "https://github.com/PanGuTech/react-native-wechat#readme"
+}
