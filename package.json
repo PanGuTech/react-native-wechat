@@ -1,6 +1,6 @@
 {
   "name": "@pangu/react-native-wechat",
-  "version": "0.0.1",
+  "version": "1.9.3",
   "description": "wechat support in React Native.",
   "main": "index.js",
   "scripts": {
