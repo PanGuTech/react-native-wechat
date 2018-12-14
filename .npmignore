@@ -1,0 +1,12 @@
+.DS_Store
+.idea
+android/.idea
+android/.gradle
+android/build
+android/*.iml
+android/local.properties
+package-lock.json
+node_modules
+Example
+*.jpg
+
