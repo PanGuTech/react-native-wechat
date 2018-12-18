@@ -126,7 +126,7 @@ or edit Info.plist add:
     protected List<ReactPackage> getPackages() {
       return Arrays.<ReactPackage>asList(
         new MainReactPackage(), 
-        new WeChatPackage(bitmap)        // Add this line
+        new WeChatPackage(bitmapBase64)        // Add this line
       );
     }
     ```
