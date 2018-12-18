@@ -11,7 +11,7 @@ import java.util.Collections;
 import java.util.List;
 
 public class WeChatPackage implements ReactPackage {
-    private static String bm = null;
+    private static String bm = null;//base64形式
     public WeChatPackage(){
         super();
     }
