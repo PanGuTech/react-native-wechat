@@ -1,5 +1,8 @@
 package com.reactnative.wechat.react;
 
+import android.graphics.Bitmap;
+import android.graphics.BitmapFactory;
+
 import com.facebook.react.ReactPackage;
 import com.facebook.react.bridge.JavaScriptModule;
 import com.facebook.react.bridge.NativeModule;
@@ -10,15 +13,23 @@ import java.util.Arrays;
 import java.util.Collections;
 import java.util.List;
 
-/**
- * Created by tdzl2_000 on 2015-10-10.
- */
 public class WeChatPackage implements ReactPackage {
+    private static Bitmap bm = null;
+    public WeChatPackage(){
+        super();
+    }
+    public WeChatPackage(Bitmap bm){
+        super();
+        if(bm!=null){
+            this.bm = bm;
+        }
+    }
     @Override
     public List<NativeModule> createNativeModules(ReactApplicationContext reactContext) {
+
         return Arrays.asList(new NativeModule[]{
             // Modules from third-party
-            new WeChatModule(reactContext),
+            new WeChatModule(reactContext,this.bm),
         });
     }
 

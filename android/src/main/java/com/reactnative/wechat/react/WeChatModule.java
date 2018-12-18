@@ -76,8 +76,10 @@ public class WeChatModule extends ReactContextBaseJavaModule implements IWXAPIEv
     private final static String INVOKE_FAILED = "WeChat API invoke returns false.";
     private final static String INVALID_ARGUMENT = "invalid argument.";
 
-    public WeChatModule(ReactApplicationContext context) {
+    private static Bitmap SHARE_ADD_IMG = null;//需要拼接到分享的图片下面的图片
+    public WeChatModule(ReactApplicationContext context,Bitmap shareAddImg) {
         super(context);
+        if(shareAddImg!=null) SHARE_ADD_IMG = shareAddImg;
     }
 
     @Override
@@ -328,7 +330,11 @@ public class WeChatModule extends ReactContextBaseJavaModule implements IWXAPIEv
 
 
             Bitmap imageLocal = decodeBase64ToBitmap(imageUrl);
-            Bitmap  bm = BitmapFactory.decodeResource( getReactApplicationContext().getResources(),R.drawable.share);
+            Bitmap  bm = null;
+            if(SHARE_ADD_IMG!=null){
+//             Bitmap  bm = BitmapFactory.decodeResource( getReactApplicationContext().getResources(),R.drawable.share);
+                bm = SHARE_ADD_IMG;
+            }
             Bitmap resultBm = mergeBitmap(imageLocal,bm);
 
 
@@ -714,7 +720,12 @@ public class WeChatModule extends ReactContextBaseJavaModule implements IWXAPIEv
      */
     private String saveBitmapToFile(Bitmap bitmap) {
         String abPath ="";
-        Bitmap  bm = BitmapFactory.decodeResource( getReactApplicationContext().getResources(),R.drawable.share);
+        Bitmap bm = null;
+        if(SHARE_ADD_IMG!=null){
+//            Bitmap  bm = BitmapFactory.decodeResource( getReactApplicationContext().getResources(),R.drawable.share);
+            bm = SHARE_ADD_IMG;
+        }
+//        Bitmap  bm = BitmapFactory.decodeResource( getReactApplicationContext().getResources(),R.drawable.share);
 //        bitmap = BitmapUtils.compressByQuality(bitmap,31);
         Bitmap mergeBitmap = mergeBitmap(bitmap,bm);
 
