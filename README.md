@@ -115,7 +115,7 @@ or edit Info.plist add:
 - Add following lines into `MainActivity.java` or `MainApplication.java`:
 
     ```java
-    import com.theweflex.react.WeChatPackage;       // Add this line before public class MainActivity
+    import com.reactnative.wechat.react.WeChatPackage;       // Add this line before public class MainActivity
     ...
 
     /**
@@ -126,7 +126,7 @@ or edit Info.plist add:
     protected List<ReactPackage> getPackages() {
       return Arrays.<ReactPackage>asList(
         new MainReactPackage(), 
-        new WeChatPackage()        // Add this line
+        new WeChatPackage(bitmap)        // Add this line
       );
     }
     ```
@@ -139,7 +139,7 @@ or edit Info.plist add:
 
     import android.app.Activity;
     import android.os.Bundle;
-    import com.theweflex.react.WeChatModule;
+    import com.reactnative.wechat.react.WeChatModule;
 
     public class WXEntryActivity extends Activity {
       @Override
@@ -159,7 +159,7 @@ or edit Info.plist add:
 
     import android.app.Activity;
     import android.os.Bundle;
-    import com.theweflex.react.WeChatModule;
+    import com.reactnative.wechat.react.WeChatModule;
 
     public class WXPayEntryActivity extends Activity {
       @Override
